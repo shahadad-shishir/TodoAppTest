@@ -81,7 +81,7 @@
 
 @media only screen and (max-width: 500px) {
   #popup {
-    bottom: 100px;
+    bottom: 85px;
   }
   #popup .msg-area {
     padding: 14px 11px;
