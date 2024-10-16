@@ -1,0 +1,179 @@
+.edit-category {
+  position: fixed;
+  z-index: 12;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg);
+  color: var(--text);
+  max-height: 90%;
+  padding: 35px 12px 0px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  width: 420px;
+}
+
+.edit-category.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.edit-category.active {
+  visibility: visible;
+}
+
+.edit-category .edit-header{
+  font-weight: 500;
+  font-size: 20px;
+  margin-left: 30px;
+}
+
+
+.edit-form {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0px 22px;
+}
+
+.edit-name {
+  width: 100%;
+  position: relative;
+  border: 1px solid var(--input-brdr);
+  padding: 16px 11px;
+  border-radius: 15px;
+}
+
+.edit-name:hover {
+  border: 1px solid var(--secondary);
+}
+
+.edit-form input {
+  width: 100%;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  font-size: 17px;
+  color: var(--text);
+  resize: none;
+  letter-spacing: 0.03em;
+}
+
+ .edit-label1 {
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  left: 4px;
+  background-color: var(--bg);
+  padding: 0 5px;
+  font-size: 13px;
+  color: var(--text-min6);
+  font-weight: 400;
+}
+
+span.edit-nm-count {
+  text-align: left;
+  display: none; /*block*/
+  width: 100%;
+  margin-top: 6px;
+  font-size: 12px;
+  margin-left: 30px;
+}
+
+.edit-category .fotter {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 0 0 30px
+}
+
+#edit-cancel-btn, #edit-save-btn {
+  background-color: transparent;
+  border: 0;
+  margin-right: 35px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#edit-cancel-btn {
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+#edit-cancel-btn:hover, #edit-save-btn.enable:hover {
+  background-color: var(--secondary-min1);
+}
+
+#edit-save-btn {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+#edit-save-btn.enable {
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+#edit-save-btn i {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+#color-picker.CP2 {
+  margin-bottom: 5px;
+}
+
+
+@media only screen and (max-width: 500px) { 
+  .edit-category {
+    width: 88%;
+    padding: 27px 9px 0px;
+  }
+  .edit-category .edit-header {
+    font-size: 15px;
+  }
+  .remove-emoji {
+    padding: 8px 15px;
+    font-size: 12px;
+    border-radius: 11px;
+  }
+  .edit-name {
+    padding: 11px 10px;
+    border-radius: 13px;
+  }  
+  .edit-form input {
+    font-size: 13px;
+  }
+   .edit-label1 {
+    top: -9px;
+    left: 5px;
+    padding: 0 2px;
+    font-size: 11px;
+  }  
+  span.edit-nm-count {
+    margin-top: 4px;
+    font-size: 11px;
+    margin-left: 20px;
+  }
+  #edit-cancel-btn, #edit-save-btn {
+    margin-right: 25px;
+    font-size: 14px;
+    padding: 8px 11px;
+    border-radius: 7px;
+  }
+  .edit-category .fotter {
+    padding: 0 0 20px;
+  }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App - Task</title>
+  <link rel="stylesheet" href="../style/index.css">
+  <link rel="stylesheet" href="../style/task/task.css">
+
+  <style>
+    :root {
+      --primary: rgb(237, 238, 246);
+      --primary-min8: rgba(237, 238, 246, 0.8);
+      --secondary: rgb(182, 36, 255); 
+      --secondary-min0: rgba(182, 36, 255, 0);
+      --secondary-min1: rgba(182, 36, 255, 0.1);
+      --secondary-min2: rgba(182, 36, 255, 0.2);
+      --secondary-min3: rgba(182, 36, 255, 0.3);
+      --secondary-min4: rgba(182, 36, 255, 0.4);
+      --secondary-min5: rgba(182, 36, 255, 0.5);
+      --secondary-min6: rgba(182, 36, 255, 0.6);
+      --secondary-min7: rgba(182, 36, 255, 0.7);
+      --secondary-min8: rgba(182, 36, 255, 0.8);
+      --secondary-min9: rgba(182, 36, 255, 0.9);
+      --text: rgb(16, 23, 39);
+      --text-min1: rgba(16, 23, 39, 0.1);
+      --text-min6: rgba(16, 23, 39, 0.6);
+      --text-min7: rgba(16, 23, 39, 0.7);
+      --bg: rgb(245, 245, 245);
+      --bg-min7: rgba(245, 245, 245, 0.7);
+      --bg1: rgb(140, 145, 156);
+      --bg2: rgb(217, 217, 217);
+      --bg3: rgb(215, 215, 215);
+      --bg3-min7: rgba(215, 215, 215, 0.7);
+      --input-brdr: rgb(0, 0, 0, 0.23);
+      --hover: rgb(0, 0, 0, 0.04);
+      --popup: rgb(240, 240, 245, 0.58);
+    }
+  </style>
+</head>
+<body>
+  <header id="header" style="display: flex;">
+    <div class="header-container">
+      <div class="angle">
+        <i class="fa-solid fa-angle-left"></i>
+      </div>
+      <div class="text">Task Details</div>
+      <div class="user">
+        <div><i class="fa-solid fa-user user-icon"></i></div>
+        <span class="tooltip">User</span>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="main">
+    <div class="card">
+      <h2 class="heading">Task: <span>Demo Task</span></h2>
+      <table>
+        <tbody>
+          <tr id="emoji">
+            <th>Emoji:</th>
+            <td><i>none</i></td>
+          </tr>
+          <tr id="id">
+            <th>ID:</th>
+            <td></td>
+          </tr>
+          <tr id="description">
+            <th>Description:</th>
+            <td></td>
+          </tr>
+          <tr id="color">
+            <th>Color:</th>
+            <td>
+              <span></span> #B624FF
+            </td>
+          </tr>
+          <tr id="created">
+            <th>Created:</th>
+            <td></td>
+          </tr>
+          <tr id="deadline">
+            <th>Task deadline:</th>
+            <td></td>
+          </tr>
+          <tr id="done">
+            <th>Done:</th>
+            <td>
+              <i class="fa-solid fa-check"></i> true
+            </td>
+          </tr>
+          <tr id="pinned">
+            <th>Pinned:</th>
+            <td>
+              <i class="fa-solid fa-xmark"></i>false
+            </td>
+          </tr>
+          <tr id="category">
+            <th>Category:</th>
+            <td>
+              <ul>
+                <li>
+                    <span class="emoji">🏢</span>
+                    Home
+                  </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+    
+  <nav id="navbar">
+    <ul>
+      <li class="tasks">
+        <div>
+          <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M22 5.18 10.59 16.6l-4.24-4.24 1.41-1.41 2.83 2.83 10-10zm-2.21 5.04c.13.57.21 1.17.21 1.78 0 4.42-3.58 8-8 8s-8-3.58-8-8 3.58-8 8-8c1.58 0 3.04.46 4.28 1.25l1.44-1.44C16.1 2.67 14.13 2 12 2 6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-1.19-.22-2.33-.6-3.39z"></path></svg>
+          <span class="count">2</span>
+        </div>
+        <span>Tasks</span>
+      </li>
+    
+      <li class="categories">
+        <i class="fa-solid fa-shapes"></i>
+        <span>Categories</span>
+      </li>
+    
+      <li class="add">
+        <div>
+          <i class="fa-solid fa-plus"></i>
+        </div>
+      </li>
+    
+      <li class="transfer">
+        <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M16.59 9H15V4c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v5H7.41c-.89 0-1.34 1.08-.71 1.71l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.63-.63.19-1.71-.7-1.71M5 19c0 .55.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1H6c-.55 0-1 .45-1 1"></path></svg>
+        <span>Transfer</span>
+      </li>
+    
+      <li class="profile">
+        <i class="fa-solid fa-user"></i>
+        <span>Profile</span>
+      </li>
+    </ul>
+  </nav>
+</body>
+</html>

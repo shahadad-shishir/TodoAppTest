@@ -1,0 +1,206 @@
+.edit-task {
+  position: fixed;
+  z-index: 12;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg);
+  color: var(--text);
+  max-height: 90%;
+  border-radius: 20px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.edit-task.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.edit-header {
+  font-weight: 500;
+  font-size: 20px;
+  width: 100%;
+  padding: 20px 30px 20px;
+}
+
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 25px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0 30px 5px;
+}
+
+.name {
+  margin-top: -25px;
+}
+
+.date-time, .name, .description {
+  width: 100%;
+  position: relative;
+  border: 1px solid var(--input-brdr);
+  padding: 16px 10px;
+  border-radius: 10px;
+}
+
+.date-time:hover, .name:hover, .description:hover {
+  border: 1px solid var(--text);
+}
+
+.form input, .form textarea{
+  width: 100%;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  font-size: 16px;
+  color: var(--text);
+  resize: none;
+  letter-spacing: 0.03em;
+}
+
+.form .label1 {
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  left: 4px;
+  background-color: var(--bg);
+  padding: 0 5px;
+  font-size: 13px;
+  color: var(--text-min6);
+  font-weight: 400;
+}
+
+span.nm-count, span.des-count {
+  text-align: left;
+  display: none; /*block*/
+  width: 100%;
+  margin-top: -20px;
+  font-size: 13px;
+  margin-left: 20px;
+}
+
+.category {
+  width: 100%;
+}
+
+.category span {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+#ctgry-selector:hover {
+  border-color: var(--text);
+}
+
+#ctgry-selector .select {
+  z-index: 13;
+}
+
+#ctgry-selector-bg {
+  top: -100%;
+  bottom: -100%;
+  left: -100%;
+  right: -100%;
+  z-index: 12;
+}
+
+#color-picker:hover {
+  border-color: var(--text);
+}
+
+.edit-task .fotter {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  padding: 18px 0 15px;
+}
+
+#cancel-btn, #save-btn {
+  background-color: transparent;
+  border: 0;
+  margin-right: 35px;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#cancel-btn {
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+#cancel-btn:hover {
+  background-color: var(--secondary-min1);
+}
+
+#save-btn {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+#save-btn.enable {
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+#save-btn.enable:hover {
+  background-color: var(--secondary-min1);
+}
+
+#save-btn i {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+
+@media only screen and (max-width: 500px) {
+  .form {
+    padding: 0 15px 5px;
+  }
+  .edit-task .edit-header {
+    font-size: 16px;
+  }
+  .form .label1 {
+    font-size: 11px;
+  }
+  .form input, .form textarea {
+     font-size: 13px;
+  }
+  span.nm-count, span.des-count {
+    font-size: 11px;
+  }
+  .date-time, .name, .description {
+    padding: 12px 8px;
+  }
+  .category span {
+    font-size: 13px;
+  }
+  #cancel-btn, #save-btn {
+      font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  #emoji-picker {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 515px) {
+  .edit-task {
+    width: 95% !important;
+  }
+}

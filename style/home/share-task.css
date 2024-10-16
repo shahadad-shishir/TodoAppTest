@@ -1,0 +1,452 @@
+.share-task {
+  position: fixed;
+  z-index: 12;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg);
+  color: var(--text);
+  max-height: 90%;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.share-task.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.share-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 0 14px 15px;
+}
+
+.share-header .left {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.share-header .left i {
+  margin-right: 10px;
+  color: var(--text);
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 11px;
+}
+
+.share-header .heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.share-header .heading span{
+  font-size: 14px;
+  margin-top: 3px;
+  opacity: 0.8;
+}
+
+.share-header .right i {
+  font-size: 20px;
+    opacity: 0.8;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.15s;
+    cursor: pointer;
+}
+
+.share-header .right i:hover {
+  background-color: var(--hover);
+}
+
+.share-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+  padding: 0 14px;
+  overflow-y: auto;
+}
+
+.share-body .task-nm {
+  width: 100%;
+  margin-top: 5px;
+  display: flex;
+  justify-content: start;
+}
+
+.share-body .task-nm span {
+  background-color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 9px 16px;
+  border-radius: 16px;
+}
+
+.share-body .options {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.share-body .options button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  height: 65px;
+  color: var(--text);
+  text-transform: uppercase;
+  border-radius: 20px 20px 0 0;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.share-body .options svg {
+  width: 28px;
+  opacity: 0.8;
+  fill: var(--text);
+  margin-right: 5px;
+}
+
+.share-body .options button.selected {
+  opacity: 1;
+  color: var(--secondary);
+  border-bottom: 3px solid var(--secondary);
+}
+
+.share-body .options button.selected svg {
+  fill: var(--secondary);
+}
+
+.share-body .link {
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+  border: 1px solid var(--input-brdr);
+  padding: 6px 9px;
+  border-radius: 10px;
+  display: none; /*flex*/
+  align-items: center;
+}
+
+.share-body .link:hover {
+  border: 1px solid var(--secondary);
+}
+
+.share-body .link span.svg {
+  display: flex;
+  align-items: center;
+}
+
+.share-body .link svg {
+  margin-right: 6px;
+  width: 24px;
+  fill: var(--text-min6);
+}
+
+.share-body .link input {
+  width: 100%;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  font-size: 16px;
+  color: var(--text);
+  resize: none;
+  letter-spacing: 0.03em;
+}
+
+.share-body .link .label1 {
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  left: 4px;
+  background-color: var(--bg);
+  padding: 0 5px;
+  font-size: 13px;
+  color: var(--text-min6);
+  font-weight: 400;
+}
+
+.share-body .link .copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  color: var(--secondary);
+  font-size: 14px;
+  border-radius: 13px;
+  margin-left: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.share-body .link .copy svg {
+  width: 23px;
+  fill: var(--secondary);
+}
+
+.share-body .qr-code {
+  margin-top: 30px;
+  width: 100%;
+  display: none; /*flex*/
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-body .qr-code .download {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid var(--secondary);
+  border-radius: 15px;
+  padding: 12px 27px;
+  font-size: 15px;
+  color: var(--secondary);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.share-body .qr-code .download svg {
+  width: 25px;
+  fill: var(--secondary);
+  margin-right: 8px;
+}
+
+.share-body .qr-code .download:hover {
+  background-color: var(--secondary-min1);
+}
+
+.share-body .info {
+  display: flex;
+  align-items: start;
+  margin-top: 25px;
+  padding: 16px;
+  margin-bottom: 10px;
+  border-radius: 16px;
+  color: rgb(1, 67, 97);
+  background-color: rgb(229, 246, 253);
+}
+
+.share-body .info svg {
+  width: 20px;
+  fill: rgb(2, 136, 209);
+  margin-top: 3px;
+}
+
+.share-body .info div {
+  margin-left: 13px;
+}
+
+.share-body .info div span {
+  font-weight: 500;
+}
+
+.share-body .info div p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.share-fotter {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  padding: 28px 14px 5px;
+}
+
+.share-fotter #close-btn, #share-btn {
+  background-color: transparent;
+  border: 0;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+#share-btn {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.share-fotter #close-btn:hover, #share-btn:hover {
+  background-color: var(--secondary-min1);
+}
+
+#share-btn i {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+
+@media only screen and (min-width: 700px) {
+  .share-task {
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 699px) {
+  .share-task {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .share-task {
+    width: 85%;
+    border-radius: 15px;
+    padding: 18px;
+  }
+  .share-header {
+    padding: 0 10px 15px;
+  }
+  .share-header .left i {
+    margin-right: 8px;
+    padding: 10px;
+    border-radius: 9px;
+    font-size: 14px;
+  } 
+  .share-header .heading h3{
+    font-size: 16px;
+  }
+  .share-header .heading span{
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  .share-header .right i {
+    font-size: 16px;
+    width: 26px;
+    height: 26px;
+  }
+  .share-body {
+    margin-top: 8px;
+    padding: 0 10px;
+  }
+  .share-body .task-nm span {
+    padding: 7px 12px;
+    font-size: 12px;
+    border-radius: 14px;
+  }
+  .share-body .options {
+    margin-top: 8px;
+  } 
+  .share-body .options button {
+    height: 55px;
+    border-radius: 16px 16px 0 0;
+    font-size: 12px;
+  }
+  .share-body .options svg {
+    width: 20px;
+    margin-right: 4px;
+  } 
+  .share-body .options button.selected {
+    border-bottom: 2px solid var(--secondary);
+  } 
+  .share-body .link {
+    margin-top: 25px;
+    padding: 4px 6px;
+    border-radius: 8px;
+  }
+  .share-body .link svg {
+    margin-right: 4px;
+    width: 20px;
+  }
+  .share-body .link input {
+    font-size: 12px;
+    letter-spacing: 0.02em;
+  }
+  .share-body .link .label1 {
+    top: -7px;
+    padding: 0 3px;
+    font-size: 11px;
+  }
+  .share-body .link .copy {
+    padding: 6px 11px;
+    font-size: 12px;
+    border-radius: 10px;
+  } 
+  .share-body .link .copy svg {
+    width: 19px;
+  }
+  .share-body .qr-code {
+    margin-top: 25px;
+  } 
+  .share-body .qr-code .download {
+    margin-top: 8px;
+    border-radius: 10px;
+    padding: 8px 17px;
+    font-size: 12px;
+  }
+  .share-body .qr-code .download svg {
+    width: 20px;
+    margin-right: 6px;
+  }
+  .share-body .info {
+    margin-top: 20px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+  }
+  .share-body .info svg {
+    width: 16px;
+    margin-top: 6px;
+  }
+  .share-body .info div {
+    margin-left: 8px;
+  }
+  .share-body .info span {
+    font-size: 13px;
+  }
+  .share-body .info div p {
+    font-size: 11px;
+    margin-top: 5px;
+  }
+  .share-fotter {
+    padding: 20px 10px 5px;
+  }
+  .share-fotter #close-btn, #share-btn {
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 6px;
+  }
+  #share-btn {
+    margin-left: 25px;
+  }
+  #share-btn i {
+    font-size: 14px;
+    margin-right: 6px;
+  }
+}

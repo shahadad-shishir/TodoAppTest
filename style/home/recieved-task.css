@@ -1,0 +1,240 @@
+.recieved-task {
+  position: fixed;
+  z-index: 12;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg);
+  color: var(--text);
+  max-height: 90%;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.recieved-task.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+#recievedTask-bg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0px;
+  bottom: 0;
+  width: 100%;
+  z-index: 11;
+  filter: brightness(50%);
+  backdrop-filter: blur(6px);
+  display: none;
+}
+
+.recieved-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border-bottom: 1px solid #ddd;
+  padding: 0 14px 15px;
+  margin-top: 10px;
+}
+
+.recieved-header {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.recieved-header span.svg {
+  margin-right: 10px;
+  fill: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--input-brdr);
+  padding: 12px;
+  border-radius: 11px;
+}
+
+.recieved-header svg {
+  fill: var(--text);
+  width: 25px;
+}
+
+.recieved-header .heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.recieved-header .heading span{
+  font-size: 14px;
+  margin-top: 3px;
+  opacity: 0.8;
+}
+
+.recieved-body {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  width: 100%;
+  margin-top: 25px;
+  padding: 0 14px;
+  overflow-y: auto;
+}
+
+.recieved-body .user-nm span {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.recieved-body .task {
+  padding: 20px;
+  box-shadow: none !important;
+  margin: 20px 0 10px;
+}
+
+.recieved-fotter {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  padding: 28px 14px 5px;
+}
+
+.recieved-fotter #decline-btn, .recieved-fotter #add-btn {
+  background-color: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.recieved-fotter #decline-btn {
+  color: rgb(255, 49, 49);
+}
+
+.recieved-fotter #add-btn {
+  margin-left: 30px;
+  color: var(--secondary);
+}
+
+.recieved-fotter #decline-btn svg {
+  width: 21px;
+  fill: rgb(255, 49, 49);
+  margin-right: 10px;
+}
+
+.recieved-fotter #add-btn svg {
+  width: 20px;
+  fill: var(--secondary);
+  margin-right: 10px;
+}
+
+.recieved-fotter #decline-btn:hover {
+  background-color: rgba(255, 49, 49, 0.1);
+}
+
+.recieved-fotter #add-btn:hover {
+  background-color: var(--secondary-min1);
+}
+
+
+@media only screen and (min-width: 700px) {
+  .recieved-task {
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 699px) {
+  .recieved-task {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .recieved-task {
+    width: 85%;
+    border-radius: 15px;
+    padding: 18px;
+  }
+  .recieved-header {
+    padding: 0 10px 15px;
+    margin-top: 6px;
+  }
+  .recieved-header span.svg {
+    margin-right: 8px;
+    padding: 8px;
+    border-radius: 9px;
+  }
+  .recieved-header svg {
+    fill: var(--text);
+    width: 20px;
+  }
+  .recieved-header .heading h3{
+    font-size: 16px;
+  }
+  .recieved-header .heading span{
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  .recieved-body {
+    margin-top: 15px;
+    padding: 0 10px;
+  }
+  .recieved-body .user-nm {
+    font-size: 12px;
+  }
+  .recieved-body .task {
+    padding: 13px;
+    margin: 15px 0 6px;
+  }
+  .recieved-body .task .top-left h3 {
+    font-size: 13px;
+  }
+  .recieved-body .task .bottom-area p {
+    font-size: 12px;
+  }
+  .recieved-body .task .deadline {
+    font-size: 12px;
+  }
+  .recieved-body .task .deadline svg {
+    width: 14px;
+  }
+  .recieved-body .task-emoji span {
+    padding: 5px 5px;
+    font-size: 22px;
+    border-radius: 10px;
+  }
+  .recieved-body .task-emoji {
+    margin-right: 15px;
+  }
+  .recieved-fotter {
+    padding: 20px 10px 5px;
+  }
+  .recieved-fotter #decline-btn, .recieved-fotter #add-btn {
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 6px;
+  }
+  .recieved-fotter #decline-btn svg , .recieved-fotter #add-btn svg {
+    width: 16px;
+    margin-right: 8px;
+  }  
+  .recieved-fotter #add-btn {
+    margin-left: 20px;
+  }
+}

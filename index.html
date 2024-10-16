@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <title>Todo App</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/icon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/icon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="style/index.css">
+  <style id="theme"></style>
+</head>
+<body class="no-select">
+  <header id="header" style="display: none;">
+    <div class="header-container">
+      <div class="angle">
+        <i class="fa-solid fa-angle-left"></i>
+      </div>
+      <div class="text"><!-- Add New Task --></div>
+      <div class="user">
+        <div class="js-profile-pic">
+        </div>
+        <span class="tooltip js-user-name">User</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="root"></div>
+
+  <div class="loading">
+    <svg class="big">
+      <circle cx="35" cy="35" r="35"></circle>
+    </svg>
+
+    <svg class="small">
+      <circle cx="25" cy="25" r="25"></circle>
+    </svg>
+  </div>
+
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h2 class="app-name"><span>Todo </span>App.</h2>
+    </div>
+
+    <ul class="sidebar-options">
+      <li class="sidebar-tasks">
+        <span class="nm">
+          <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M22 5.18 10.59 16.6l-4.24-4.24 1.41-1.41 2.83 2.83 10-10zm-2.21 5.04c.13.57.21 1.17.21 1.78 0 4.42-3.58 8-8 8s-8-3.58-8-8 3.58-8 8-8c1.58 0 3.04.46 4.28 1.25l1.44-1.44C16.1 2.67 14.13 2 12 2 6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-1.19-.22-2.33-.6-3.39z"></path></svg> Tasks 
+        </span>
+        <div class="task-count">
+          <span class="task-count-number">1</span>
+          <span class="sidebar-tooltip"><span></span> tasks to do</span>
+        </div>
+      </li>
+
+      <li class="sidebar-add"><i class="fa-solid fa-plus"></i> Add Task</li>
+
+      <li class="sidebar-purge">
+        <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zm3.17-6.41a.9959.9959 0 0 1 0-1.41c.39-.39 1.02-.39 1.41 0L12 12.59l1.41-1.41c.39-.39 1.02-.39 1.41 0s.39 1.02 0 1.41L13.41 14l1.41 1.41c.39.39.39 1.02 0 1.41s-1.02.39-1.41 0L12 15.41l-1.41 1.41c-.39.39-1.02.39-1.41 0a.9959.9959 0 0 1 0-1.41L10.59 14zM18 4h-2.5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1"></path></svg>
+        Purge Tasks
+        </li>
+
+      <li class="sidebar-ctgry"><i class="fa-solid fa-shapes"></i> Categories</li>
+      
+      <li class="sidebar-transfer"> 
+        <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M16.59 9H15V4c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v5H7.41c-.89 0-1.34 1.08-.71 1.71l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.63-.63.19-1.71-.7-1.71M5 19c0 .55.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1H6c-.55 0-1 .45-1 1"></path></svg>
+        Transfer
+      </li>
+
+      <span class="sidebar-break"></span>
+
+      <li class="sidebar-github" href="#"><i class="fa-brands fa-github"></i> Github</li>
+
+      <li class="sidebar-issue" href="#"><i class="fa-solid fa-bug"></i> Report Issue</li>
+
+      <span class="sidebar-break"></span>
+
+      <li class="sidebar-install" href="#"> <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 17H4V5h8V3H4c-1.1 0-2 .9-2 2v12c0 1.1.89 2 2 2h4v1c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-1h4c1.1 0 2-.9 2-2v-3h-2z"></path><path d="M17.71 13.29 21.3 9.7c.39-.39.39-1.02 0-1.41a.9959.9959 0 0 0-1.41 0L18 10.17V4c0-.55-.45-1-1-1s-1 .45-1 1v6.17l-1.89-1.88a.9959.9959 0 0 0-1.41 0c-.39.39-.39 1.02 0 1.41l3.59 3.59c.4.39 1.03.39 1.42 0"></path></svg> Install App</li>
+
+      <li class="sidebar-logout" href="#"><i class="fa-solid fa-sign-out"></i> Logout</li>
+
+      <div class="sidebar-space"></div>
+
+      <li class="sidebar-settings" href="#"><i class="fa-solid fa-gear"></i> Settings</li>
+
+      <span class="sidebar-break"></span>
+
+      <li class="sidebar-user" href="#">
+        <div class="js-profile-pic">
+        </div> 
+        <span class="user-name js-user-name">User</span>
+      </li>
+
+      <span class="sidebar-break"></span>
+    </ul>
+    <div class="creator">Made by @shahadad-shishir</div>
+  </nav>
+  <div id="sidebar-bg"></div>
+
+  <nav id="navbar">
+    <ul>
+      <li class="tasks">
+        <div>
+          <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M22 5.18 10.59 16.6l-4.24-4.24 1.41-1.41 2.83 2.83 10-10zm-2.21 5.04c.13.57.21 1.17.21 1.78 0 4.42-3.58 8-8 8s-8-3.58-8-8 3.58-8 8-8c1.58 0 3.04.46 4.28 1.25l1.44-1.44C16.1 2.67 14.13 2 12 2 6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-1.19-.22-2.33-.6-3.39z"></path></svg>
+          <span class="count">2</span>
+        </div>
+        <span>Tasks</span>
+      </li>
+    
+      <li class="categories">
+        <i class="fa-solid fa-shapes"></i>
+        <span>Categories</span>
+      </li>
+    
+      <li class="add">
+        <div>
+          <i class="fa-solid fa-plus"></i>
+        </div>
+      </li>
+    
+      <li class="transfer">
+        <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M16.59 9H15V4c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v5H7.41c-.89 0-1.34 1.08-.71 1.71l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.63-.63.19-1.71-.7-1.71M5 19c0 .55.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1H6c-.55 0-1 .45-1 1"></path></svg>
+        <span>Transfer</span>
+      </li>
+    
+      <li class="profile">
+        <i class="fa-solid fa-user"></i>
+        <span>Profile</span>
+      </li>
+    </ul>
+  </nav>
+  <div id="logout-bg" class="blur-bg"></div>
+
+  <script type="module" src="src/app.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+  <script src="./assets/libraries/qrious.min.js"></script>
+</body>
+</html>

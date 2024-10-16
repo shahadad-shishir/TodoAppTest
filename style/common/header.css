@@ -1,0 +1,141 @@
+#header {
+  /* display: flex;  */
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: var(--primary);
+  color: var(--text) !important;
+  transition: background-color 0.3s;
+}
+
+body.no-scroll #header .user {
+  padding-right: 8px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  margin-top: 9px;
+  padding-bottom: 4px;
+}
+
+#header .angle {
+  font-size: 25px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 22px;
+  margin-left: -11px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+#header .text {
+  flex: 1;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  text-shadow: rgba(0, 0, 0, 0.408) 0px 0px 24px;
+}
+
+#header .user div {
+  background-color: var(--bg1);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.15s linear;
+}
+
+#header .user div img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#header .user i.fa-user {
+  font-size: 26px;
+  color: rgb(255, 255, 255);
+}
+
+#header .user {
+  position: relative;
+}
+
+#header .user .letter {
+  font-size: 27px;
+  color: rgb(255, 255, 255);
+}
+
+#header .tooltip {
+  position: absolute;
+  background-color: var(--bg3);
+  color: var(--text);
+  text-transform: capitalize;
+  font-size: 13px;
+  padding: 9px 14px;
+  border-radius: 5px;
+  font-weight: 500;
+  bottom: -50px;
+  transition: opacity 0.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#header .user .tooltip {
+  right: -6px;
+}
+
+@media only screen and (max-width: 1025px) {
+  .header-container {
+    width: 93%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #header .text {
+    font-size: 20px;
+  }
+  #header .user div {
+    width: 40px;
+    height: 40px;
+  }
+  #header .user i.fa-user {
+    font-size: 21px;
+  }
+  #header .angle {
+    font-size: 20px;
+  }
+  #header .user .letter {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (min-width: 501px) {
+  #header .user:hover span {
+    opacity: 1;
+  } 
+  #header .angle:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  #header .user div:hover {
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media only screen and (min-width: 1026px) {
+  body.no-scroll #header .user {
+    padding-right: 7px;
+  }
+} 

@@ -1,0 +1,175 @@
+#navbar {
+  padding: 0px 10px;
+  border-radius: 24px 24px 0px 0px;
+  background: var(--primary-min8);
+  backdrop-filter: blur(20px);
+  display: none;
+  position: fixed;
+  height: 95px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  animation: navBarAnim 0.5s ease;
+  transition: background 0.3s;
+}
+
+body.no-scroll #navbar {
+  margin-right: 8px;
+}
+
+#navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+#navbar li {
+  cursor: pointer;
+  font-size: 23px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 65%;
+  border-radius: 15px;
+  color: var(--text);
+}
+
+#navbar svg {
+  width: 29px;
+  margin-bottom: -4px;
+  fill: var(--text)
+}
+
+#navbar li span {
+  font-size: 14px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+#navbar .add div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  border: 2.5px solid var(--secondary);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  /* animation: 1.2s ease 0s infinite normal none running addAnim; */
+}
+
+#navbar .add:hover div{
+  animation: none !important;
+}
+
+#navbar li.selected {
+  color: var(--secondary);
+}
+
+#navbar li.selected svg {
+  fill: var(--secondary);
+}
+
+#navbar .tasks div{
+  position: relative;
+}
+
+#navbar .count {
+  position: absolute;
+  bottom: 18px;
+  right: -14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary);
+  color: rgb(225, 225, 225);
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  font-size: 12px;
+  animation: countAnim .7s ease;
+  display: none; /*flex*/
+}
+
+@keyframes navAddAnim {
+  0% {
+    transform: scale(0.95);
+    box-shadow: var(--secondary-min7) 0px 0px 0px 0px;
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: var(--secondary-min0) 0px 0px 0px 10px;
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: var(--secondary-min0) 0px 0px 0px 0px;
+  }
+}
+
+@keyframes navBarAnim {
+  0% {
+    bottom: -100px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes countAnim {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@media only screen and (max-width: 760px) {
+  #navbar {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #navbar {
+    padding: 0px 5px;
+    height: 80px;
+  }
+  #navbar .add div{
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+  }
+  #navbar li {
+    font-size: 14px;
+    height: 55%;
+    border-radius: 10px;
+  }
+  #navbar li span {
+    font-size: 11px;
+  }
+  #navbar .transfer svg {
+    width: 21px;
+  }
+  #navbar .tasks svg {
+    width: 20px;
+  }
+  #navbar .count {
+    bottom: 10px;
+    right: -11px;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+}

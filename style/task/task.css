@@ -1,0 +1,152 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 32px;
+  margin: 100px auto 0px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 24px 2px;
+  padding: 30px 25px 20px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 28px;
+}
+
+table {
+  margin-top: 30px;
+  text-align: left;
+}
+
+th {
+  padding-left: 5px;
+  font-size: 18px;
+}
+
+td {
+  font-size: 17px;
+}
+
+table, td, tr{
+  border-bottom: 2px solid var(--secondary-min3);
+  border-collapse: collapse;
+  padding: 10px 0;
+}
+
+table, td, tr:last-child {
+  border: 0;
+}
+
+#color td{
+  display: flex;
+  align-items: center;
+}
+
+#color span {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#done td, #pinned td {
+  display: flex;
+  align-items: center;
+}
+
+#done i, #pinned i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+
+#category ul {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+#category li {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  list-style: none;
+  background-color: var(--secondary);
+  color: #fff;
+  padding: 6px 13px;
+  border-radius: 20px;
+}
+
+#category li .emoji {
+  font-size: 17px;
+  margin-right: 5px;
+}
+
+
+@media (min-width: 768px) {
+  .card {
+    padding: 24px;
+    width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  #root {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 63px;
+  }
+
+  .card {
+    margin: 0;
+    width: 93%;
+  }
+  .card .heading {
+    font-size: 17px;
+  }
+
+  table th {
+    font-size: 15px;
+  }
+  table td {
+    font-size: 14px;
+  }
+  #color span {
+    width: 18px;
+    height: 18px;
+  }
+  #category li {
+    font-size: 12px;
+    padding: 4px 11px;
+    border-radius: 16px;
+  }
+  #category li .emoji {
+    font-size: 14px;
+    margin-right: 4px;
+  }
+
+  table #id td {
+    word-break: break-all;
+  }
+}

@@ -1,0 +1,299 @@
+.main {
+  margin-top: 95px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.export {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.export h2 {
+  font-weight: 600;
+}
+
+.export h2 i {
+  padding-left: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.export .tooltip {
+  position: absolute;
+  z-index: 2;
+  background-color: var(--bg3);
+  color: var(--text);
+  text-transform: capitalize;
+  font-size: 12px;
+  padding: 9px 14px;
+  border-radius: 5px;
+  font-weight: 500;
+  bottom: -45px;
+  left: -115px;
+  transition: opacity 0.5s;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.export .tasks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 30px;
+  row-gap: 20px;
+  width: 100%;
+}
+
+.export ul .empty {
+  font-size: 18px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.export ul li {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 15px;
+  border-radius: 14px;
+  background-color: rgba(16, 23, 39, 0.082);
+  border: 2px solid rgb(182, 36, 255);
+  /* box-shadow: rgb(182, 36, 255) 0px 0px 8px 1px; */
+  transition: box-shadow 0.3s;
+  width: 300px;
+  cursor: pointer;
+}
+
+.export li label {
+  display: flex;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-checkbox {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--text);
+  border-radius: 3px;
+  margin-right: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="checkbox"]:checked + .custom-checkbox {
+  border-color: var(--secondary);
+  background-color: var(--secondary);
+}
+
+input[type="checkbox"]:checked + .custom-checkbox::before {
+  content: '\2714';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 15px;
+}
+
+.export .task-emoji {
+  font-size: 20px;
+  margin-right: 1px;
+}
+
+.export-selected, .export-all, .select-json-file, .import-from-clipboard, .import-from-link {
+  margin-top: 25px;
+  width: 295px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid var(--secondary);
+  border-radius: 10px;
+  padding: 12px 0;
+  font-size: 15px;
+  color: var(--secondary);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.export-selected svg, .export-all svg, .select-json-file svg, .import-from-clipboard svg, .import-from-link svg {
+  width: 25px;
+  fill: var(--secondary);
+  margin-right: 8px;
+}
+
+.export-selected:hover, .export-all:hover, .select-json-file:hover, .import-from-clipboard:hover, .import-from-link:hover {
+  background-color: var(--secondary-min1);
+}
+
+
+.export-selected.disable, .export-all.disable {
+  color: var(--text);
+  border-color: var(--text);
+  cursor: default;
+  opacity: 0.5;
+}
+
+.export-selected.disable svg, .export-all.disable svg {
+  fill: var(--text);
+}
+
+.export-selected.disable:hover, .export-all.disable:hover {
+  background-color: transparent;
+}
+
+.export-selected .count {
+  margin-left: 4px;
+  display: none;
+}
+
+.import {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.import h2 {
+  font-weight: 600;
+}
+
+.drop-file {
+  margin-top: 30px;
+  width: 295px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px dashed var(--secondary);
+  border-radius: 16px;
+  padding: 32px 64px;
+  text-align: center;
+}
+
+.drop-file svg {
+  width: 35px;
+  margin-bottom: 5px;
+  fill: var(--secondary);
+}
+
+input[type="file"] {
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.import-from-clipboard {
+  text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .main {
+    margin-top: 85px;
+    margin-bottom: 0;
+  }
+  .export h2 {
+    font-size: 17px;
+  }
+  .export h2 i {
+    padding-left: 8px;
+    font-size: 14px;
+  }
+  .export .tasks {
+    margin-top: 25px;
+    row-gap: 18px;
+  } 
+  .export ul .empty {
+    font-size: 13px;
+  }  
+  .export ul li {
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    width: 57%;
+  }
+  .custom-checkbox {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+  }
+  input[type="checkbox"]:checked + .custom-checkbox::before {
+    font-size: 12px;
+  }
+  .export .task-emoji {
+    font-size: 15px;
+  }
+  .export-selected, .export-all, .select-json-file, .import-from-clipboard, .import-from-link {
+    width: 55%;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+  .export-selected svg, .export-all svg, .select-json-file svg, .import-from-clipboard svg, .import-from-link svg {
+    width: 18px;
+    margin-right: 4px;
+  }
+  .export-selected:hover, .export-all:hover, .select-json-file:hover, .import-from-clipboard:hover, .import-from-link:hover {
+    background-color: transparent;
+  }
+  .import {
+    margin-top: 35px;
+  }
+  
+  .import h2 {
+    font-size: 17px;
+  }
+  .drop-file {
+    width: 55%;
+    margin-top: 25px;
+    border-radius: 14px;
+    padding: 25px 30px;
+    font-size: 13px;
+  }
+  .drop-file svg {
+    width: 30px;
+    margin-bottom: 4px;
+  }
+  .import-from-link {
+    margin-bottom: 95px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .export ul li {
+    width: 72%;
+  }
+  .export-selected, .export-all, .select-json-file, .import-from-clipboard, .import-from-link {
+    width: 70%;
+  }
+  .drop-file {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 501px) {
+  .export h2 i:hover .tooltip {
+    opacity: 1;
+  } 
+}
