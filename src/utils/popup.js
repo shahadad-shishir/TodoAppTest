@@ -63,7 +63,7 @@ export const popup = {
         this.rmvPopup(msgArea);
       }
       clearTimeout(timeoutId2);
-    }, 4000)
+    }, 120000)
 
     msgArea.addEventListener('click', () => {
       this.rmvPopup(msgArea);

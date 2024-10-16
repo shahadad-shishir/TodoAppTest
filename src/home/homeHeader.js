@@ -6,21 +6,21 @@ export const homeHeader = {
   intervalId: undefined,
 
   quotes: [
-    'Stay organized, stay ahead.',
-    'Embrace the power of productivity!',
-    'Today is a new opportunity to be productive!',
-    'Set your goals, crush them, repeat.',
-    'Productivity is the key to success. 🔑',
     "Let's turn plans into accomplishments!",
-    'Stay focused, stay productive.',
-    'Get ready to make things happen!',
-    'Unlock your productivity potential. 🔓',
-    'Today is a new opportunity to be productive!',
-    'day',
-    'Make every moment count.',
-    'hours',
-    'Get things done and conquer the day!',
-    'Be efficient, be productive.'
+    "Let's turn plans into accomplishments!",
+    "Let's turn plans into accomplishments!",
+    "Let's turn plans into accomplishments!",
+    "Let's turn plans into accomplishments!",
+    "Let's turn plans into accomplishments!",
+    "Let's turn plans into accomplishments!",
+    "Let's turn plans into accomplishments!",
+    "Let's turn plans into accomplishments!",
+    "Let's turn plans into accomplishments!",
+    "Let's turn plans into accomplishments!",
+    "Let's turn plans into accomplishments!",
+    "Let's turn plans into accomplishments!",
+    "Let's turn plans into accomplishments!",
+    "Let's turn plans into accomplishments!",
   ],
 
   init() {
@@ -63,7 +63,7 @@ export const homeHeader = {
         this.quote.style.removeProperty('animation');
         clearTimeout(timeoutId);
       }, 600)
-    }, 5000);
+    }, 120000);
   },
 
   clearInterval() {
