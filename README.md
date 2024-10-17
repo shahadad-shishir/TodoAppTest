@@ -1,6 +1,6 @@
 <p align="center">
 <img src="./assets/icons/apple-touch-icon.png" width="128px" />
-<h1>📝Vanilla js Todo App</h1>
+<h1>📝Vanilla JS Todo App</h1>
 </p>
 
 ## [https://js-cool-todo-app.netlify.app/](https://js-cool-todo-app.netlify.app/)
@@ -42,8 +42,8 @@
 
   <img src="./screenshots/recieved-task.png" width="260px" alt="Shared Task" />
 
-- **🗂️ Bulk Actions**: Select multiple tasks and perform actions like delete or mark as done for all at once. *Feature coming soon.*
-- **🧹 Purge Tasks**: A feature to remove completed or unwanted tasks in one action. *Feature coming soon.*
+- **🗂️ Bulk Actions**: Select multiple tasks and perform actions like delete or mark as done for all at once. *(Feature coming soon.)*
+- **🧹 Purge Tasks**: A feature to remove completed or unwanted tasks in one action. *(Feature coming soon.)*
 
 ### 🖥️ User Interface
 
@@ -58,13 +58,13 @@
 
   <img src="./screenshots/color-themes.png" width="200px" alt="Color Themes" />
   
-- **⚙️ App Settings**: Customize app behavior, preferences, and themes in a settings panel. *Feature coming soon.*
+- **⚙️ App Settings**: Customize app behavior and preferences in a settings panel. *(Feature coming soon.)*
 
 ### ⚡ Performance & Optimization
 
 - **🔄 Single Page Application (SPA)**: Enjoy fast page transitions without reloading.
 - **⚙️ Lazy loading**: Improve performance by loading content only when needed.
-- **📱 Progressive Web App (PWA)**: Install the app like a native mobile app, use it offline, and receive push notifications. *Feature coming soon.*
+- **📱 Progressive Web App (PWA)**: Install the app like a native mobile app, use it offline, and receive push notifications. *(Feature coming soon.)*
 
 ### 🎁 Additional Features
 
@@ -72,7 +72,7 @@
 - **💬 Motivational quotes**: Get inspired by a random motivational quote to boost your productivity.
 - **📊 Progress tracking**: Track your task completion progress in a clear and concise way.
 - **🔔 Toast notifications**: Receive instant feedback on your actions, such as task saved or deleted.
-- **📝 Session storage**: Retain form data using session storage to avoid losing information while adding tasks or categories. *Feature coming soon.*
+- **📝 Session storage**: Retain form data using session storage to avoid losing information while adding tasks or categories. *(Feature coming soon.)*
 
 ## 📷 Screenshots
 
